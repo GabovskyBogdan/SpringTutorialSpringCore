@@ -7,24 +7,24 @@
 
 
     <!--Candidates-->
-    <bean id="biden" class="com.efimchick.springtutorial.core.zz.lives.elections.Candidate">
+    <bean id="biden" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.Candidate">
         <constructor-arg index="0" value="Biden"/>
         <constructor-arg index="1" value="DEM"/>
     </bean>
 
-    <bean id="trump" class="com.efimchick.springtutorial.core.zz.lives.elections.Candidate">
+    <bean id="trump" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.Candidate">
         <constructor-arg index="0" value="Trump"/>
         <constructor-arg index="1" value="RES"/>
     </bean>
 
-    <bean id="kanye" class="com.efimchick.springtutorial.core.zz.lives.elections.Candidate">
+    <bean id="kanye" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.Candidate">
         <constructor-arg index="0" value="Kanye West"/>
         <constructor-arg index="1">
             <null/>
         </constructor-arg>
     </bean>
 
-    <bean id="ross" class="com.efimchick.springtutorial.core.zz.lives.elections.Candidate">
+    <bean id="ross" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.Candidate">
         <constructor-arg index="0" value="Ross Perro"/>
         <constructor-arg index="1">
             <null/>
@@ -33,24 +33,24 @@
 
 
     <!--Policies-->
-    <bean id="loyalDemPolicy" class="com.efimchick.springtutorial.core.zz.lives.elections.LoyalElectionPolicy">
+    <bean id="loyalDemPolicy" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.LoyalElectionPolicy">
         <property name="party" value="DEM"/>
     </bean>
-    <bean id="loyalResPolicy" class="com.efimchick.springtutorial.core.zz.lives.elections.LoyalElectionPolicy">
+    <bean id="loyalResPolicy" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.LoyalElectionPolicy">
         <property name="party" value="RES"/>
     </bean>
-    <bean id="notSoLoyalResPolicy" class="com.efimchick.springtutorial.core.zz.lives.elections.NotSoLoyalElectionPolicy">
+    <bean id="notSoLoyalResPolicy" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.NotSoLoyalElectionPolicy">
         <constructor-arg index="0" value="RES"/>
         <constructor-arg index="1" value="0.7"/>
     </bean>
-    <bean scope="prototype" id="resNoTrumpPolicy" class="com.efimchick.springtutorial.core.zz.lives.elections.NotThisOneElectionPolicy">
+    <bean scope="prototype" id="resNoTrumpPolicy" class="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.NotThisOneElectionPolicy">
         <constructor-arg name="defaultPolicy" ref="loyalResPolicy"/>
         <constructor-arg name="fallbackPolicy" ref="loyalDemPolicy"/>
         <constructor-arg name="banned" ref="trump"/>
     </bean>
 
     <util:map id="bindings"
-              key-type="com.efimchick.springtutorial.core.zz.lives.elections.ElectionPolicy"
+              key-type="com.epamlearning.eugen.springtutorial.core.zz.lives.elections.ElectionPolicy"
               value-type="java.util.Set">
         <entry key-ref="loyalDemPolicy">
             <set>

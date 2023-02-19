@@ -9,14 +9,15 @@
     </bean>
 
 
-    <bean id="provider" class="com.efimchick.springtutorial.core.it7.springconstructordi.CustomStringMessageProvider">
+    <bean id="provider" class="com.epamlearning.eugen.springtutorial.core.it7.springconstructordi.CustomStringMessageProvider">
         <constructor-arg index="0" ref="msg"/>
         <constructor-arg value="4"/>
         <constructor-arg value="true"/>
         <constructor-arg type="char" value="!"/>
     </bean>
 
-    <bean id="sender" class="com.efimchick.springtutorial.core.it7.springconstructordi.SystemOutMessageSender">
+    <bean id="sender"
+          class="com.epamlearning.eugen.springtutorial.core.it7.springconstructordi.SystemOutMessageSender">
     </bean>
 
 </beans>

@@ -10,14 +10,14 @@
           c:_0="c: Message"
     />
 
-    <bean id="provider" class="com.efimchick.springtutorial.core.it7.springconstructordi.CustomStringMessageProvider"
+    <bean id="provider" class="com.epamlearning.eugen.springtutorial.core.it7.springconstructordi.CustomStringMessageProvider"
           c:_0-ref="msg"
           c:_1="4"
           c:_2="true"
           c:_3="!"
     />
 
-    <bean id="sender" class="com.efimchick.springtutorial.core.it7.springconstructordi.OutputFileMessageSender"
+    <bean id="sender" class="com.epamlearning.eugen.springtutorial.core.it7.springconstructordi.OutputFileMessageSender"
         p:filename="log.log"
     />
 

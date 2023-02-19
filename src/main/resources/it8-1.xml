@@ -8,17 +8,17 @@
         <constructor-arg value="warning"/>
     </bean>
 
-    <bean id="provider" class="com.efimchick.springtutorial.core.it8.springcollections.CombinedMessageProvider">
+    <bean id="provider" class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.CombinedMessageProvider">
         <constructor-arg>
             <list>
-                <bean class="com.efimchick.springtutorial.core.it8.springcollections.CustomStringMessageProvider">
+                <bean class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.CustomStringMessageProvider">
                     <constructor-arg index="0" ref="msg"/>
                     <constructor-arg index="1" value="1"/>
                     <constructor-arg index="2" value="true"/>
                     <constructor-arg type="char" value="!"/>
                 </bean>
 
-                <bean class="com.efimchick.springtutorial.core.it8.springcollections.CustomStringMessageProvider">
+                <bean class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.CustomStringMessageProvider">
                     <constructor-arg index="0" value="error"/>
                     <constructor-arg index="1" value="2"/>
                     <constructor-arg index="2" value="true"/>
@@ -31,15 +31,15 @@
         </constructor-arg>
     </bean>
 
-    <bean id="fileSender" class="com.efimchick.springtutorial.core.it8.springcollections.OutputFileMessageSender">
+    <bean id="fileSender" class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.OutputFileMessageSender">
         <property name="filename" value="log.log"/>
     </bean>
 
-    <bean id="sender" class="com.efimchick.springtutorial.core.it8.springcollections.CombinedMessageSender">
+    <bean id="sender" class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.CombinedMessageSender">
         <constructor-arg>
-            <map key-type="java.lang.String" value-type="com.efimchick.springtutorial.core.it8.springcollections.MessageSender">
+            <map key-type="java.lang.String" value-type="com.epamlearning.eugen.springtutorial.core.it8.springcollections.MessageSender">
                 <entry key="warn">
-                    <bean class="com.efimchick.springtutorial.core.it8.springcollections.SystemOutMessageSender"/>
+                    <bean class="com.epamlearning.eugen.springtutorial.core.it8.springcollections.SystemOutMessageSender"/>
                 </entry>
                 <entry key="error" value-ref="fileSender"/>
             </map>
