@@ -5,12 +5,12 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="provider"
-          class="com.epamlearning.eugen.springtutorial.core.it6.springemerged.CustomStringMessageProvider">
+          class="com.efimchick.springtutorial.core.it6.springemerged.CustomStringMessageProvider">
         <property name="msg" value="Hello"/>
     </bean>
 
     <bean id="sender"
-          class="com.epamlearning.eugen.springtutorial.core.it6.springemerged.SystemOutMessageSender">
+          class="com.efimchick.springtutorial.core.it6.springemerged.SystemOutMessageSender">
     </bean>
 
 </beans>

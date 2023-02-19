@@ -11,7 +11,7 @@ Annotation-Based context
 - component-scan
 - @Controller, @Service, @Repository, @Component
 - @Autowired, XML autowire
-- setter, constructor, field, required, @Qualifier, @Value ("#{...}""), confi
+- setter, constructor, field, required, @Qualifier, @Value ("#{...}""), config
 
 Java Config:
 - @Configuration @Bean
