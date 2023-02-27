@@ -1,6 +1,7 @@
 package com.efimchick.springtutorial.core.it6.springemerged;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
@@ -11,14 +12,22 @@ import java.io.IOException;
  */
 
 public class Main {
-    public static void main(String[] args) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException, InterruptedException {
 
-        ApplicationContext context =
+        ConfigurableApplicationContext context =
                 new AnnotationConfigApplicationContext(
                         JavaConfig.class
                 );
 
         final BusinessFunction bf = context.getBean("allInOne", BusinessFunction.class);
+        bf.exec();
+
+        final SomeEventPublisher publisher = context.getBean(SomeEventPublisher.class);
+        publisher.generateEvent();
+        publisher.generateEvent();
+        publisher.generateEvent();
+        publisher.generateEvent();
+
         bf.exec();
 
 
